@@ -1,0 +1,26 @@
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server.port=80
+multipart.maxFileSize=10Mb
+#endpoints.shutdown.enabled=true
+
+# Druid数据库连接池
+spring.druid.name=springboot
+spring.druid.url=jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&zeroDateTimeBehavior=convertToNull
+spring.druid.username=root
+spring.druid.password=root
+spring.druid.driverClassName=com.mysql.jdbc.Driver
+spring.druid.filters=stat
+spring.druid.maxActive=20
+spring.druid.initialSize=1
+spring.druid.maxWait=60000
+spring.druid.minIdle=1
+spring.druid.timeBetweenEvictionRunsMillis=60000
+spring.druid.minEvictableIdleTimeMillis=300000
+spring.druid.validationQuery=select 1
+spring.druid.testWhileIdle=true
+spring.druid.testOnBorrow=false
+spring.druid.testOnReturn=false
+spring.druid.poolPreparedStatements=true
+spring.druid.maxOpenPreparedStatements=20
+spring.druid.allow=127.0.0.1/24,127.0.0.2
+spring.druid.deny=192.168.200.1/24

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/task    
+   					    http://www.springframework.org/schema/task/spring-task.xsd ">
+
+	<!-- 定时器开关 如果在spring boot的启动类中有 @EnableScheduling注解，这里就不能设置，两者只能选择一种 -->
+	<task:annotation-driven />
+	<bean id="dailyDataTask" class="org.ceeker.web.sbootm.task.DailyDataTask" />
+	<task:scheduled-tasks>
+		<!-- 每30分钟执行一次changeStatus 时间配置用 1000*30会报错 -->
+		<task:scheduled ref="dailyDataTask" method="reportCurrentTime"
+			fixed-rate="30000" initial-delay="1000" />
+	</task:scheduled-tasks>
+</beans>

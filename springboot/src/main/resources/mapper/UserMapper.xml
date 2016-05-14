@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ceeker.web.sbootm.mapper.UserMapper">
+	<sql id="table_name">user</sql>
+	<sql id="base_colunm">
+		username,password
+	</sql>
+
+	<resultMap id="User" type="User">
+		<result property="userName" column="username" />
+		<result property="passWord" column="password" />
+	</resultMap>
+
+
+	<select id="list" resultMap="User" parameterType="map">
+		select
+		<include refid="base_colunm" />
+		from
+		<include refid="table_name" />
+
+		<where>
+			<if test="sendChannel!=0">
+				send_status=#{sendStatus}
+			</if>
+		</where>
+	</select>
+
+	<select id="findByUserName" resultMap="User" parameterType="String">
+		select
+		<include refid="base_colunm" />
+		from user where username =
+		#{username}
+	</select>
+
+
+</mapper>
