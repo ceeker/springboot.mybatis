@@ -11,6 +11,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import de.codecentric.boot.admin.config.EnableAdminServer;
+
 /**
  * Spring boot 的启动程序
  * 所有的组件，比如controller，service，dao都必须位于该类同包或者子包下面
@@ -23,9 +25,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @see
  */
 @SpringBootApplication
+@EnableAdminServer
 @EnableScheduling
 //@ImportResource(value = { "classpath:config/spring-task.xml" })
-@PropertySources(value = { @PropertySource(value = { "classpath:config/application.propertis" }, ignoreResourceNotFound = true) })
+@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
 public class AppStart extends SpringBootServletInitializer {
 
     @Override
@@ -37,9 +40,9 @@ public class AppStart extends SpringBootServletInitializer {
         //        SpringApplication.run(AppStart.class, args);
         SpringApplication app = new SpringApplication(AppStart.class);
         app.setAdditionalProfiles();
-        //        app.setBannerMode(Banner.Mode.LOG);
+        //                app.setBannerMode(Banner.Mode.LOG);
         ApplicationContext ctx = app.run(args);
-        getAllBean(ctx);
+        //        getAllBean(ctx);
     }
 
     /**
