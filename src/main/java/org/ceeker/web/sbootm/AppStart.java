@@ -2,6 +2,8 @@ package org.ceeker.web.sbootm;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -31,6 +33,8 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
 public class AppStart extends SpringBootServletInitializer {
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(AppStart.class);
@@ -50,12 +54,12 @@ public class AppStart extends SpringBootServletInitializer {
      * @param applicationContext
      * @throws Exception
      */
-    public static void getAllBean(ApplicationContext applicationContext) throws Exception {
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
+    public void getAllBean(ApplicationContext applicationContext) throws Exception {
+        logger.info("Let's inspect the beans provided by Spring Boot:");
         String[] beanNames = applicationContext.getBeanDefinitionNames();
         Arrays.sort(beanNames);
         for (String beanName : beanNames) {
-            System.out.println(beanName);
+            logger.info(beanName);
         }
     }
 
