@@ -33,7 +33,7 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
 public class AppStart extends SpringBootServletInitializer {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+//    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
