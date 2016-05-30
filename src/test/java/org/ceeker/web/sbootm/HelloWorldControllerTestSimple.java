@@ -1,5 +1,4 @@
 package org.ceeker.web.sbootm;
-/*package sns.wechat.status.test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -18,12 +17,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
-import com.bj58.chr.wechat.status.bootstrap.AppStart;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AppStart.class)
 @WebAppConfiguration
-@IntegrationTest({ "server.port=0" })
+@IntegrationTest({ "server.port=80" })
 public class HelloWorldControllerTestSimple {
 
     @Value("${local.server.port}")
@@ -43,4 +40,4 @@ public class HelloWorldControllerTestSimple {
         ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
         assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
     }
-}*/
+}
