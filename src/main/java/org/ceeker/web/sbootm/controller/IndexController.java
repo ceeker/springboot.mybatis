@@ -13,7 +13,6 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-        int num = 1 / 0;
         return "index";
     }
 

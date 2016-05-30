@@ -2,15 +2,11 @@ package org.ceeker.web.sbootm;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
@@ -30,7 +26,7 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @EnableAdminServer
 @EnableScheduling
 //@ImportResource(value = { "classpath:config/spring-task.xml" })
-@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
+//@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
 public class AppStart extends SpringBootServletInitializer {
 
 //    private final Logger logger = LoggerFactory.getLogger(getClass());

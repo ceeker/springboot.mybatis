@@ -36,7 +36,7 @@ import com.github.pagehelper.PageHelper;
  * @see
  */
 @Configuration
-@MapperScan("org.ceeker.web.sbootm.mapper")
+@MapperScan("org.ceeker.web.sbootm.entity.mapper")
 //注解事务
 @EnableTransactionManagement
 //@PropertySources({ @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true), @PropertySource(value = "file:./application.properties", ignoreResourceNotFound = true) })

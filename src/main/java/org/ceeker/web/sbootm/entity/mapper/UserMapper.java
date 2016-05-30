@@ -1,4 +1,4 @@
-package org.ceeker.web.sbootm.mapper;
+package org.ceeker.web.sbootm.entity.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -1,7 +1,7 @@
 package org.ceeker.web.sbootm.service;
 
 import org.ceeker.web.sbootm.entity.User;
-import org.ceeker.web.sbootm.mapper.UserMapper;
+import org.ceeker.web.sbootm.entity.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;

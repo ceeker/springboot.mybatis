@@ -1,4 +1,4 @@
-package org.ceeker.web.sbootm.task;
+package org.ceeker.web.sbootm.common.task;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
