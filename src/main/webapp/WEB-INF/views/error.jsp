@@ -11,8 +11,6 @@
 <title>SSM错误页面</title>
 </head>
 <body>
-	<h1>Error Handler</h1>
-	<div th:text="${url}"></div>
-	<div th:text="${exception.message}"></div>
+	<h1>ssm has an error is:${status }</h1>
 </body>
 </html>

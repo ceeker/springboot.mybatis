@@ -1,27 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!-- 包含常用的标签库 -->
+<%@include file="common/tag.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" >
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-<!-- Bootstrap -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  media="screen"/>
+<!-- 静态包含，把代码合并到一起，编译形成一个servlet -->
+<%@include file="common/head.jsp"%>
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 <!-- Custom styles for this template -->
 <link href="/css/mycss/signin.css" rel="stylesheet">
-<title>ceeker springboot首页</title>
+<link style="">
+<title>SSM首页</title>
 </head>
 <body>
 	<div class="container">
-		<h1  class="text-center">Welcome to ceeker springboot</h1>
+		<h1  class="text-center">Welcome to SSM</h1>
       <form class="form-signin">
         <h2 class="form-signin-heading"></h2>
         <label for="inputEmail" class="sr-only">邮箱</label>
