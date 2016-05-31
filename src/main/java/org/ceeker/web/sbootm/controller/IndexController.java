@@ -11,9 +11,14 @@ public class IndexController {
     @Value(value = "${server.port}")
     private String port;
 
-    @RequestMapping("/")
+    @RequestMapping(value={"/","index"})
     public String index() {
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @RequestMapping("/port")
