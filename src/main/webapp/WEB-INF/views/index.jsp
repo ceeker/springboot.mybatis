@@ -29,7 +29,6 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
-
     </div> <!-- /container -->
 	<script type="text/javascript" src="/js/jquery-2.2.4.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>

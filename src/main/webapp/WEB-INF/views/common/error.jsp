@@ -8,9 +8,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>SSM错误页面</title>
+<title>ceeker springboot 错误展示页面</title>
 </head>
 <body>
-	<h1>ssm has an error is:${status }</h1>
+	<h1>Error Handler</h1>
+	<h2>${url }</h2>
+	<h2>${msg}</h2>
 </body>
 </html>

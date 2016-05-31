@@ -13,6 +13,7 @@ public class IndexController {
 
     @RequestMapping(value={"/","index"})
     public String index() {
+        int a=1/0;
         return "index";
     }
 
