@@ -129,6 +129,10 @@
 			<groupId>org.jolokia</groupId>
 			<artifactId>jolokia-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		<!--检测设备类型 -->
 		<dependency>
 			<groupId>org.springframework.mobile</groupId>

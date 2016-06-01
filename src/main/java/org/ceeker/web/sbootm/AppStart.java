@@ -23,7 +23,7 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
  * @see
  */
 @SpringBootApplication
-@EnableAdminServer
+//@EnableAdminServer
 @EnableScheduling
 //@ImportResource(value = { "classpath:config/spring-task.xml" })
 //@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
