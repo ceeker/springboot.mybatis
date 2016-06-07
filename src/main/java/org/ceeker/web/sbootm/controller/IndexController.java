@@ -13,7 +13,6 @@ public class IndexController {
 
     @RequestMapping(value={"/","index"})
     public String index() {
-        int a=1/0;
         return "index";
     }
 
@@ -24,7 +23,7 @@ public class IndexController {
 
     @RequestMapping("/port")
     @ResponseBody
-    public String device() {
+    public String port() {
         return "web server run at port:" + port;
     }
 

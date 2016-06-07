@@ -12,7 +12,7 @@ import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.stereotype.Component;
 
 /**
- * admin server统计切面，并将信息上报给admin server
+ * 统计切面，并将信息上报给admin server
  * @author zhangxiaoling01
  * @date  2016年5月29日 上午1:42:31
  * @see
