@@ -5,6 +5,13 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
+
+/**
+ * redis 发布
+ * @author zhangxiaoling01
+ * @date  2016年6月7日 下午9:23:00
+ * @see
+ */
 public class RedisPublish {
 
     private Jedis jedis = null;
