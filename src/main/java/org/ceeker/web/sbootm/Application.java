@@ -2,6 +2,9 @@ package org.ceeker.web.sbootm;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -27,20 +30,21 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @EnableScheduling
 //@ImportResource(value = { "classpath:config/spring-task.xml" })
 //@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
-public class AppStart extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer {
 
-//    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(AppStart.class);
+        return application.sources(Application.class);
     }
 
     public static void main(String[] args) throws Exception {
-        //        SpringApplication.run(AppStart.class, args);
-        SpringApplication app = new SpringApplication(AppStart.class);
+        SpringApplication app = new SpringApplication(Application.class,args);
+        //设置命令行参数不加入environment中
+        app.setAddCommandLineProperties(false);
+        //设置激活何种配置
         app.setAdditionalProfiles();
-        //                app.setBannerMode(Banner.Mode.LOG);
         ApplicationContext ctx = app.run(args);
         //        getAllBean(ctx);
     }
