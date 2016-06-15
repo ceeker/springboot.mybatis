@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.3.RELEASE</version>
+		<version>1.3.5.RELEASE</version>
 	</parent>
 
 	<!-- 我们已经有父pom，不能直接增加<parent>时,可采用如下方式 -->
@@ -38,7 +38,12 @@
 		<!-- view -->
 		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-velocity</artifactId> 
 			</dependency> -->
-		<!-- 使用jsp需要添加以下两个依赖 -->
+		<!-- 使用jsp需要添加以下依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
