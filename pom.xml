@@ -81,7 +81,6 @@
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>2.4.3</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -153,6 +152,11 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -164,6 +168,10 @@
 				<!--热部署 （ 使用mvn spring-boot:run运行，热部署才有效） -->
 				<!-- 会导致在eclipse中结束运行后，实际项目还可以访问，此时如果改变代码，会及时生效，如果重新启动出现端口占用的情况请注意这里 -->
 				<!--可通过任务管理器结束相关进程 -->
+				<configuration>
+					<!--可执行配置 -->
+					<executable>true</executable>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.springframework</groupId>

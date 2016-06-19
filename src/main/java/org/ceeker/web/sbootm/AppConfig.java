@@ -125,7 +125,8 @@ public class AppConfig {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-    @Primary //默认数据源 
+    //默认数据源 
+    @Primary
     @Bean(initMethod = "init", destroyMethod = "close")
     @ConfigurationProperties(prefix = "spring.druid")
     public DataSource dataSource() {
