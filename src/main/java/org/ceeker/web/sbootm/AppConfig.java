@@ -16,6 +16,7 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -39,6 +40,8 @@ import com.github.pagehelper.PageHelper;
 @MapperScan("org.ceeker.web.sbootm.entity.mapper")
 //注解事务
 @EnableTransactionManagement
+//导入其他配置类
+@Import(value={})
 //@PropertySources({ @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true), @PropertySource(value = "file:./application.properties", ignoreResourceNotFound = true) })
 public class AppConfig {
 
