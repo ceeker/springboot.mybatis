@@ -33,13 +33,13 @@ public class Application extends SpringBootServletInitializer {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(Application.class);
+//    }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication app = new SpringApplication(Application.class, args);
+        SpringApplication app = new SpringApplication(Application.class);
         //设置命令行参数不加入environment中
         app.setAddCommandLineProperties(false);
         //设置激活何种配置
