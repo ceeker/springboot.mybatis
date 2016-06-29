@@ -4,6 +4,7 @@
 	<groupId>org.ceeker.app</groupId>
 	<artifactId>web.springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<description>springboot mybatis</description>
 
 	<parent>
@@ -42,6 +43,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<!-- 既可执行，又可 部署到外部容器的war，内嵌容器依赖配置为： provided-->
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

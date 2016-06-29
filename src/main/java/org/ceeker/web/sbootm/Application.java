@@ -33,10 +33,13 @@ public class Application extends SpringBootServletInitializer {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-//    @Override
-//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-//        return application.sources(Application.class);
-//    }
+    /**
+     * 创建为可执行的war
+     */
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
+    }
 
     public static void main(String[] args) throws Exception {
         SpringApplication app = new SpringApplication(Application.class);
