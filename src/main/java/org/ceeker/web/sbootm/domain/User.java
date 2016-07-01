@@ -1,4 +1,4 @@
-package org.ceeker.web.sbootm.entity;
+package org.ceeker.web.sbootm.domain;
 
 import java.io.Serializable;
 

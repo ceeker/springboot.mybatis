@@ -1,9 +1,9 @@
-package org.ceeker.web.sbootm.entity.mapper;
+package org.ceeker.web.sbootm.domain.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.ceeker.web.sbootm.entity.User;
+import org.ceeker.web.sbootm.domain.User;
 
 @Mapper
 public interface UserMapper {
