@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -27,6 +28,7 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 @SpringBootApplication
 @EnableAdminServer
 @EnableScheduling
+@EnableCaching
 //@ImportResource(value = { "classpath:config/spring-task.xml" })
 //@PropertySources(value = { @PropertySource(value = { "classpath:config/application.properties" }, ignoreResourceNotFound = true) })
 public class Application extends SpringBootServletInitializer {

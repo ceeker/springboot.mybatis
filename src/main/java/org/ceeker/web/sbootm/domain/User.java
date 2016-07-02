@@ -2,34 +2,60 @@ package org.ceeker.web.sbootm.domain;
 
 import java.io.Serializable;
 
-import org.apache.ibatis.type.Alias;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 
-@Alias("User")
-public class User implements Serializable{
+import org.springframework.data.annotation.Id;
+
+//@Alias("User")
+@Entity
+public class User implements Serializable {
 
     /**
      * 
      */
     private static final long serialVersionUID = 2459687804504582479L;
-    
-    private String userName;
-    
-    private String passWord;
 
-    public String getUserName() {
-        return userName;
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
+    private String password;
+
+    public User() {
+        super();
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public int getId() {
+        return id;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public static long getSerialversionuid() {
@@ -38,8 +64,7 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return "User [userName=" + userName + ", passWord=" + passWord + "]";
+        return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
     }
-    
 
 }

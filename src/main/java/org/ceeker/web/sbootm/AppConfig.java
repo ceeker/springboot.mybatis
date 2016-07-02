@@ -37,11 +37,11 @@ import com.github.pagehelper.PageHelper;
  * @see
  */
 @Configuration
-@MapperScan("org.ceeker.web.sbootm.entity.mapper")
+//@MapperScan("org.ceeker.web.sbootm.entity.mapper")
 //注解事务
 @EnableTransactionManagement
 //导入其他配置类
-@Import(value={})
+@Import(value = {})
 //@PropertySources({ @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true), @PropertySource(value = "file:./application.properties", ignoreResourceNotFound = true) })
 public class AppConfig {
 
@@ -90,44 +90,6 @@ public class AppConfig {
         return new DataSourceTransactionManager(dataSource());
     }
 
-    //    @Primary //默认数据源 
-    //    @Bean(destroyMethod = "close")
-    //    @ConfigurationProperties(prefix = "spring.druid")
-    //    public DataSource dataSource() {
-    //        return DataSourceBuilder.create().build();
-    //    }
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
-        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource());
-        sessionFactory.setTypeAliasesPackage("org.ceeker.web.sbootm");
-        //分页插件
-        PageHelper pageHelper = new PageHelper();
-        Properties properties = new Properties();
-        properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments", "true");
-        properties.setProperty("returnPageInfo", "check");
-        properties.setProperty("params", "count=countSql");
-        pageHelper.setProperties(properties);
-        //添加插件
-        sessionFactory.setPlugins(new Interceptor[] { pageHelper });
-        //添加XML目录
-        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        try {
-            sessionFactory.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
-            return sessionFactory.getObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
-
     //默认数据源 
     @Primary
     @Bean(initMethod = "init", destroyMethod = "close")
@@ -148,9 +110,7 @@ public class AppConfig {
      */
     @Bean
     public ServletRegistrationBean statViewServlet() {
-        ServletRegistrationBean reg = new ServletRegistrationBean();
-        reg.setServlet(new StatViewServlet());
-        reg.addUrlMappings("/druid/*");
+        ServletRegistrationBean reg = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
         reg.addInitParameter("allow", druidAllowUrl);
         reg.addInitParameter("deny", druidDenyUrl);
         return reg;
