@@ -1,15 +1,8 @@
 package org.ceeker.web.sbootm;
 
-import java.util.Properties;
-
 import javax.servlet.Filter;
 import javax.sql.DataSource;
 
-import org.apache.ibatis.plugin.Interceptor;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
@@ -18,8 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -28,7 +19,6 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import com.github.pagehelper.PageHelper;
 
 /**
  * Spring boot 配置类
@@ -85,24 +75,18 @@ public class AppConfig {
     //        return dataSource;
     //    }
 
-    @Bean
-    public PlatformTransactionManager transactionManager() {
-        return new DataSourceTransactionManager(dataSource());
-    }
-
-    //默认数据源 
-    @Primary
-    @Bean(initMethod = "init", destroyMethod = "close")
-    @ConfigurationProperties(prefix = "spring.druid")
-    public DataSource dataSource() {
-        return new DruidDataSource();
-    }
-
-    @Value("${spring.druid.allow}")
-    private String druidAllowUrl;
-
-    @Value("${spring.druid.deny}")
-    private String druidDenyUrl;
+//    @Bean
+//    public PlatformTransactionManager transactionManager() {
+//        return new DataSourceTransactionManager(dataSource());
+//    }
+//
+//    //默认数据源 
+//    @Primary
+//    @Bean(initMethod = "init", destroyMethod = "close")
+//    @ConfigurationProperties(prefix = "spring.druid")
+//    public DataSource dataSource() {
+//        return new DruidDataSource();
+//    }
 
     /**
      * druid监控地址
@@ -111,8 +95,6 @@ public class AppConfig {
     @Bean
     public ServletRegistrationBean statViewServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
-        reg.addInitParameter("allow", druidAllowUrl);
-        reg.addInitParameter("deny", druidDenyUrl);
         return reg;
     }
 

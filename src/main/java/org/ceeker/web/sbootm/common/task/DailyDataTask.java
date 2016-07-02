@@ -21,10 +21,9 @@ public class DailyDataTask {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    //    @Scheduled(cron = "*/20 * * * * ?") // 每20秒执行一次
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(cron = "0 */1 * * * ?") // 每分钟执行一次
     public void reportCurrentTime() {
-        System.out.println("The time is now " + dateFormat.format(new Date()));
+        System.out.println("--------The time is now " + dateFormat.format(new Date()));
     }
 
 }

@@ -1,4 +1,4 @@
-package org.ceeker.web.sbootm.common.aspect;
+package org.ceeker.web.sbootm.common.monitor;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class ServiceMonitor {
+public class ControllerMetrics {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
