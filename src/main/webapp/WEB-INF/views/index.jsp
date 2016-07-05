@@ -6,7 +6,7 @@
 <html lang="zh-CN">
 <head>
 <!-- 静态包含，把代码合并到一起，编译形成一个servlet -->
-<%@include file="common/head.jsp"%>
+<%@include file="common/header.jsp"%>
 <!-- Custom styles for this template -->
 <link href="/css/mycss/signin.css" rel="stylesheet">
 <title>ceeker springboot 登录页面</title>

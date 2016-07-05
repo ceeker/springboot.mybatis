@@ -20,12 +20,6 @@ public class BuilderTest {
         this.address = address;
     }
 
-    public BuilderTest(String name, String address) {
-        super();
-        this.name = name;
-        this.address = address;
-    }
-
     public static class Builder {
         private String name;
         private String address;
@@ -41,11 +35,29 @@ public class BuilderTest {
         }
 
         public BuilderTest build() {
-            return new BuilderTest(this.name, this.address);
+            return new BuilderTest(this);
         }
+    }
+    
+    
+
+    private BuilderTest() {
+        super();
+    }
+
+    private BuilderTest(Builder builder) {
+        this.address = builder.address;
+        this.name = builder.name;
     }
 
     public static void main(String[] args) {
+        BuilderTest sjs=new BuilderTest();
+        Builder bu=new Builder();
+        BuilderTest test = new BuilderTest.Builder().name("zxl").address("hh").build();
+        System.out.println(test.name);
+    }
+
+    private void getBuild() {
         BuilderTest test = new BuilderTest.Builder().name("zxl").address("hh").build();
         System.out.println(test.name);
     }
