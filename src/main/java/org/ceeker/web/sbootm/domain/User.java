@@ -6,7 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 //@Alias("User")
 @Entity
@@ -21,8 +25,10 @@ public class User implements Serializable {
     @GeneratedValue
     private int id;
     @Column(nullable = false)
+    @Size(min = 6, max = 20, message = "在{min}-{max}个字符之间！")
     private String username;
     @Column(nullable = false)
+    @Size(min = 6, max = 20, message = "在{min}-{max}个字符之间！")
     private String password;
 
     public User() {
