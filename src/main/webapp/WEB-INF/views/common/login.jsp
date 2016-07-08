@@ -70,7 +70,7 @@
 						</div>
 						<div style="float: left;">
 							<i><img style="height: 22px;" id="codeImg" alt="点击更换"
-								title="点击更换" src="" /></i>
+								title="点击更换" src="/code/img" /></i>
 						</div>
 
 						<span class="pull-right" style="padding-right: 3%;"><a
@@ -79,9 +79,7 @@
 							class="flip-link btn btn-info" id="to-recover">登录</a></span>
 					</div>
 				</div>
-
 			</form>
-
 
 			<div class="controls">
 				<div class="main_input_box">
@@ -162,6 +160,8 @@
 		}
 
 		$(document).ready(function() {
+			alert("djajkldj");
+			console.log("123");
 			changeCode();
 			$("#codeImg").bind("click", changeCode);
 		});
@@ -178,7 +178,8 @@
 		}
 
 		function changeCode() {
-			$("#codeImg").attr("src", "code.do?t=" + genTimestamp());
+			$("#codeImg").attr("src", "/code/img?t=" + genTimestamp());
+			alert($("#codeImg").attr("src").val());
 		}
 
 		//客户端校验
