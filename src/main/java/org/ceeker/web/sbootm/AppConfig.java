@@ -108,6 +108,7 @@ public class AppConfig {
 		// 是否能够重置数据.
 		servletRegistrationBean.addInitParameter("resetEnable", "false");
 		return servletRegistrationBean;
+		
 	}
 
 	@Bean
