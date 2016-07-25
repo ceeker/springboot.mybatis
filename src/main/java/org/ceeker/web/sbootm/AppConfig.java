@@ -2,7 +2,6 @@ package org.ceeker.web.sbootm;
 
 import javax.servlet.Filter;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -32,9 +31,6 @@ import com.alibaba.druid.support.http.WebStatFilter;
 // @PropertySource(value = "file:./application.properties",
 // ignoreResourceNotFound = true) })
 public class AppConfig {
-
-	@Value("${name:}")
-	private String name;
 
 	@Bean
 	public Filter characterEncodingFilter() {
