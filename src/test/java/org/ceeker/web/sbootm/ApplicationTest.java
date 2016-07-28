@@ -1,7 +1,5 @@
 package org.ceeker.web.sbootm;
 
-import javax.annotation.Resource;
-
 import org.ceeker.web.sbootm.domain.User;
 import org.ceeker.web.sbootm.domain.UserRepository;
 import org.junit.Before;

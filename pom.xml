@@ -25,20 +25,26 @@
 	</properties>
 
 	<dependencies>
-		<!-- 非web应用需添加此依赖 -->
 		<!-- http://docs.spring.io/spring-boot/docs/1.2.3.RELEASE/reference/html/using-boot-build-systems.html#using-boot-starter-poms -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<!-- web应用需要加此依赖，非web应用（如task）无需添加 -->
+		<!-- web应用需要加此依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- web应用需要加此依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 		<!-- view -->
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-velocity</artifactId> 
-			</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-velocity</artifactId>
+		</dependency>
 		<!-- 使用jsp需要添加以下依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,6 +74,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- 缓存 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
@@ -212,7 +219,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
