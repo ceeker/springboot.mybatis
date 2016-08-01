@@ -52,6 +52,17 @@
 			<!-- 既可执行，又可 部署到外部容器的war，内嵌容器依赖配置为： provided -->
 			<scope>provided</scope>
 		</dependency>
+		 <!-- Swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.2.2</version>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -103,6 +114,12 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>1.0.18</version>
+		</dependency>
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<!-- 通用mapper：https://github.com/abel533/MyBatis-Spring-Boot -->
 		<dependency>
