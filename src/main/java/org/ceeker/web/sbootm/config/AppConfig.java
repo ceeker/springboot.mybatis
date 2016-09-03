@@ -1,4 +1,4 @@
-package org.ceeker.web.sbootm;
+package org.ceeker.web.sbootm.config;
 
 import javax.servlet.Filter;
 
