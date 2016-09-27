@@ -2,6 +2,7 @@ package org.ceeker.web.sbootm;
 
 import java.util.Arrays;
 
+import org.ceeker.web.sbootm.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -52,6 +53,10 @@ public class Application extends SpringBootServletInitializer {
 		// 设置激活何种配置
 		app.setAdditionalProfiles();
 		ApplicationContext ctx = app.run(args);
+		
+		//动态控制spring管理的类
+		User user = ctx.getBean(User.class);
+		user.setId(0);
 		// getAllBean(ctx);
 	}
 
