@@ -1,7 +1,6 @@
 package org.ceeker.web.sbootm.service;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.ceeker.web.sbootm.domain.User;
 import org.ceeker.web.sbootm.domain.UserRepository;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
