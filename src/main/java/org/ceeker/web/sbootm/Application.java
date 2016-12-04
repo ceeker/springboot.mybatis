@@ -1,19 +1,15 @@
 package org.ceeker.web.sbootm;
 
-import java.util.Arrays;
-
+import de.codecentric.boot.admin.config.EnableAdminServer;
+import lombok.extern.log4j.Log4j;
 import org.ceeker.web.sbootm.domain.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import de.codecentric.boot.admin.config.EnableAdminServer;
+import java.util.Arrays;
 
 /**
  * Spring boot 的启动程序 所有的组件，比如controller，service，dao都必须位于该类同包或者子包下面 否则将不会被加载
@@ -34,17 +30,9 @@ import de.codecentric.boot.admin.config.EnableAdminServer;
 // @PropertySources(value = { @PropertySource(value = {
 // "classpath:config/application.properties" }, ignoreResourceNotFound = true)
 // })
-public class Application extends SpringBootServletInitializer {
+@Log4j
+public class Application {
 
-	private final Logger logger = LoggerFactory.getLogger(getClass());
-
-	/**
-	 * 创建为可执行的war
-	 */
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Application.class);
-	}
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication app = new SpringApplication(Application.class);
@@ -67,11 +55,11 @@ public class Application extends SpringBootServletInitializer {
 	 * @throws Exception
 	 */
 	public void getAllBean(ApplicationContext applicationContext) throws Exception {
-		logger.info("Let's inspect the beans provided by Spring Boot:");
+		log.info("Let's inspect the beans provided by Spring Boot:");
 		String[] beanNames = applicationContext.getBeanDefinitionNames();
 		Arrays.sort(beanNames);
 		for (String beanName : beanNames) {
-			logger.info(beanName);
+			log.info(beanName);
 		}
 	}
 
