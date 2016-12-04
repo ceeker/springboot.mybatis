@@ -1,7 +1,7 @@
 package org.ceeker.web.sbootm.config;
 
-import javax.servlet.Filter;
-
+import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.alibaba.druid.support.http.StatViewServlet;
-import com.alibaba.druid.support.http.WebStatFilter;
+import javax.servlet.Filter;
 
 /**
  * Spring boot 配置类
@@ -21,7 +20,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  * @see
  */
 @Configuration
-// @MapperScan("org.ceeker.web.sbootm.entity.mapper")
+// @MapperScan("org.ceeker.web.sbootm.domain.mapper")
 // 注解事务
 @EnableTransactionManagement
 // 导入其他配置类
