@@ -1,17 +1,25 @@
 package org.ceeker.web.sbootm.domain;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-import org.apache.ibatis.type.Alias;
-
-@Alias("User")
 @Entity
+@XmlRootElement
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
     /**
@@ -21,54 +29,16 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue
+    @XmlElement(name = "id")
     private int id;
     @Column(nullable = false)
     @Size(min = 6, max = 20, message = "在{min}-{max}个字符之间！")
+    @XmlElement(name = "username")
     private String username;
     @Column(nullable = false)
     @Size(min = 6, max = 20, message = "在{min}-{max}个字符之间！")
+    @XmlElement(name = "password")
     private String password;
 
-    public User() {
-        super();
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
-    }
 
 }

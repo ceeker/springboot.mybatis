@@ -21,6 +21,12 @@ public class IndexController {
         return "common/login";
     }
 
+    @RequestMapping("/exception")
+    public String exception() {
+        int a = 10 / 0;
+        return "common/login";
+    }
+
     @RequestMapping("/port")
     @ResponseBody
     public String port() {

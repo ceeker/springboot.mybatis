@@ -1,27 +1,22 @@
 package org.ceeker.web.sbootm.controller;
 
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
-import org.ceeker.web.sbootm.domain.User;
-import org.ceeker.web.sbootm.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.ceeker.web.sbootm.domain.User;
+import org.ceeker.web.sbootm.service.UserService;
+import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 用户控制器
@@ -34,12 +29,12 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("user")
 public class UserController extends BaseController {
 
-	@Resource(type = UserService.class)
+	@Resource
 	UserService userService;
 
 	@ApiOperation(value = "所有用户", notes = "全部用户信息")
-	@RequestMapping(value = "all", method = RequestMethod.GET)
-	public User all() {
+	@RequestMapping(value = "all", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
+	public List<User> all() {
 		return userService.getByUserName("");
 	}
 

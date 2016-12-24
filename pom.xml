@@ -45,11 +45,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-velocity</artifactId>
 		</dependency>
-		<dependency>
+		<!--web socket-->
+		<!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
@@ -63,13 +63,12 @@
             <groupId>org.webjars</groupId>
             <artifactId>stomp-websocket</artifactId>
             <version>2.3.3</version>
-        </dependency>
+        </dependency>-->
 		<!-- 使用jsp需要添加以下依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<!-- 既可执行，又可 部署到外部容器的war，内嵌容器依赖配置为： provided -->
-			<scope>provided</scope>
 		</dependency>
 		<!-- Swagger -->
 		<dependency>
@@ -233,11 +232,22 @@
 			<version>3.2.4</version>
 		</dependency>
 		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.16.10</version>
 			<scope>provided</scope>
 		</dependency>
+		<!--输出xml-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -556,7 +556,7 @@ jQuery.extend({
 			return null;
 		}
 
-		// Make sure leading/trailing whitespace is removed (IE can't handle it)
+        // Make sure leading/trailing whitespace is removed (IE can't handler it)
 		data = jQuery.trim( data );
 
 		// Attempt to parse using the native JSON parser first
@@ -688,7 +688,7 @@ jQuery.extend({
 
 		if ( array != null ) {
 			// The window, strings (and functions) also have 'length'
-			// Tweaked logic slightly to handle Blackberry 4.7 RegExp issues #6930
+            // Tweaked logic slightly to handler Blackberry 4.7 RegExp issues #6930
 			var type = jQuery.type( array );
 
 			if ( array.length == null || type === "string" || type === "function" || type === "regexp" || jQuery.isWindow( array ) ) {
@@ -1680,7 +1680,7 @@ jQuery.extend({
 	// attempt to add expando properties to them.
 	noData: {
 		"embed": true,
-		// Ban all objects except for Flash (which handle expandos)
+        // Ban all objects except for Flash (which handler expandos)
 		"object": "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000",
 		"applet": true
 	},
@@ -1699,7 +1699,7 @@ jQuery.extend({
 			internalKey = jQuery.expando,
 			getByName = typeof name === "string",
 
-			// We have to handle DOM nodes and JS objects differently because IE6-7
+            // We have to handler DOM nodes and JS objects differently because IE6-7
 			// can't GC object references properly across the DOM-JS boundary
 			isNode = elem.nodeType,
 
@@ -1877,7 +1877,7 @@ jQuery.extend({
 		if ( isNode ) {
 			// IE does not allow us to delete expando properties from nodes,
 			// nor does it have a removeAttribute function on Document nodes;
-			// we must handle all of these cases
+            // we must handler all of these cases
 			if ( jQuery.support.deleteExpando ) {
 				delete elem[ internalKey ];
 			} else if ( elem.removeAttribute ) {
@@ -1893,7 +1893,7 @@ jQuery.extend({
 		return jQuery.data( elem, name, data, true );
 	},
 
-	// A method for determining if a DOM node can handle the data expando
+    // A method for determining if a DOM node can handler the data expando
 	acceptData: function( elem ) {
 		if ( elem.nodeName ) {
 			var match = jQuery.noData[ elem.nodeName.toLowerCase() ];
@@ -2383,9 +2383,9 @@ jQuery.fn.extend({
 				ret = elem.value;
 
 				return typeof ret === "string" ?
-					// handle most common string cases
+                    // handler most common string cases
 					ret.replace(rreturn, "") :
-					// handle cases where value is null/undef or number
+                    // handler cases where value is null/undef or number
 					ret == null ? "" : ret;
 			}
 
@@ -2941,7 +2941,7 @@ jQuery.event = {
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
 					undefined;
 			};
-			// Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+            // Add elem as a property of the handler fn to prevent a memory leak with IE non-native events
 			eventHandle.elem = elem;
 		}
 
@@ -3124,7 +3124,7 @@ jQuery.event = {
 		}
 
 		if ( type.indexOf( "." ) >= 0 ) {
-			// Namespaced trigger; create a regexp to match event type in handle()
+            // Namespaced trigger; create a regexp to match event type in handler()
 			namespaces = type.split(".");
 			type = namespaces.shift();
 			namespaces.sort();
@@ -3677,7 +3677,7 @@ if ( !jQuery.support.changeBubbles ) {
 
 			if ( rformElems.test( this.nodeName ) ) {
 				// IE doesn't fire change on a check/radio until blur; trigger it on click
-				// after a propertychange. Eat the blur-change in special.change.handle.
+                // after a propertychange. Eat the blur-change in special.change.handler.
 				// This still fires onchange a second time for check/radio after blur.
 				if ( this.type === "checkbox" || this.type === "radio" ) {
 					jQuery.event.add( this, "propertychange._change", function( event ) {
@@ -5084,7 +5084,7 @@ if ( document.querySelectorAll ) {
 
 		div.innerHTML = "<p class='TEST'></p>";
 
-		// Safari can't handle uppercase or unicode characters when
+        // Safari can't handler uppercase or unicode characters when
 		// in quirks mode.
 		if ( div.querySelectorAll && div.querySelectorAll(".TEST").length === 0 ) {
 			return;
@@ -7384,7 +7384,7 @@ jQuery.extend({
 			responseHeaders,
 			// transport
 			transport,
-			// timeout handle
+            // timeout handler
 			timeoutTimer,
 			// Cross-domain detection vars
 			parts,
@@ -7484,7 +7484,7 @@ jQuery.extend({
 				lastModified,
 				etag;
 
-			// If successful, handle type chaining
+            // If successful, handler type chaining
 			if ( status >= 200 && status < 300 || status === 304 ) {
 
 				// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.

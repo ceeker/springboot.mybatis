@@ -9154,7 +9154,7 @@ jQuery.ajaxTransport( function( options ) {
 						if ( xhr.readyState === 4 ) {
 
 							// Allow onerror to be called first,
-							// but that will not handle a native abort
+                            // but that will not handler a native abort
 							// Also, save errorCallback to a variable
 							// as xhr.onerror cannot be accessed
 							window.setTimeout( function() {

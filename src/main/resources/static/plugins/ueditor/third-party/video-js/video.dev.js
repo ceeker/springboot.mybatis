@@ -2322,7 +2322,7 @@ vjs.Slider.prototype.update = function(){
 
   barProgress = progress;
 
-  // If there is a handle, we need to account for the handle in our calculation for progress bar
+    // If there is a handler, we need to account for the handler in our calculation for progress bar
   // so that it doesn't fall short of or extend past the handle.
   if (handle) {
 
@@ -2431,8 +2431,8 @@ vjs.Slider.prototype.onClick = function(event){
 };
 
 /**
- * SeekBar Behavior includes play progress bar, and seek handle
- * Needed so it can determine seek position based on handle position/size
+ * SeekBar Behavior includes play progress bar, and seek handler
+ * Needed so it can determine seek position based on handler position/size
  * @param {vjs.Player|Object} player
  * @param {Object=} options
  * @constructor
