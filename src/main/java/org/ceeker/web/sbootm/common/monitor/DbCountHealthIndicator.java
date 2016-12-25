@@ -1,12 +1,16 @@
 package org.ceeker.web.sbootm.common.monitor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 
 
-
+@Component
 public class DbCountHealthIndicator implements HealthIndicator {
+
+    @Autowired
     private CrudRepository crudRepository;
 
     public DbCountHealthIndicator(CrudRepository crudRepository) {

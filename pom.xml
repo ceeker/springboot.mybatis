@@ -23,6 +23,7 @@
 	<properties>
 		<java.version>1.7</java.version>
 		<swagger2.version>2.2.2</swagger2.version>
+		<springboot.admin.version>1.4.4</springboot.admin.version>
 	</properties>
 
 	<dependencies>
@@ -161,18 +162,18 @@
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-server</artifactId>
-			<version>1.3.3</version>
+			<version>${springboot.admin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-server-ui</artifactId>
-			<version>1.3.3</version>
+			<version>${springboot.admin.version}</version>
 		</dependency>
 		<!-- 应用想被监控必须加入此依赖 -->
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>1.3.3</version>
+			<version>${springboot.admin.version}</version>
 		</dependency>
 		<!-- admin server控制 应用的日志级别 -->
 		<dependency>

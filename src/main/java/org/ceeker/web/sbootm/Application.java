@@ -1,6 +1,5 @@
 package org.ceeker.web.sbootm;
 
-import de.codecentric.boot.admin.config.EnableAdminServer;
 import lombok.extern.log4j.Log4j;
 import org.ceeker.web.sbootm.domain.User;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +20,7 @@ import java.util.Arrays;
  * @see
  */
 @SpringBootApplication
-@EnableAdminServer
+//@EnableAdminServer
 //@EnableScheduling
 // @ImportResource(value = { "classpath:config/spring-task.xml" })
 // @PropertySources(value = { @PropertySource(value = {
