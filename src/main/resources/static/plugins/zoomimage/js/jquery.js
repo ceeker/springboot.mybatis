@@ -800,7 +800,7 @@ jQuery.extend({
 	curCSS: function( elem, name, force ) {
 		var ret;
 
-		// A helper method for determining if an element's values are broken
+		// A util method for determining if an element's values are broken
 		function color( elem ) {
 			if ( !jQuery.browser.safari )
 				return false;
@@ -1752,7 +1752,7 @@ jQuery.extend({
 	}
 });
 /*
- * A number of helper functions used for managing events.
+ * A number of util functions used for managing events.
  * Many of the ideas behind this code orignated from 
  * Dean Edwards' addEvent library.
  */

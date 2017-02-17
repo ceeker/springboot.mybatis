@@ -6593,7 +6593,7 @@ vjs.TextTrack.prototype.updateDisplay = function(){
   this.el_.innerHTML = html;
 };
 
-// Set all loop helper values back
+// Set all loop util values back
 vjs.TextTrack.prototype.reset = function(){
   this.nextChange = 0;
   this.prevChange = this.player_.duration();

@@ -490,7 +490,7 @@ if (XRegExp) {
 
 
     //---------------------------------
-    //  Private helper functions
+    //  Private util functions
     //---------------------------------
 
     // Supporting function for `XRegExp`, `XRegExp.copyAsGlobal`, etc. Returns a copy of a `RegExp`

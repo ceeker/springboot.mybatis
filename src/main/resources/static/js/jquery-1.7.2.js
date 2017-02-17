@@ -1310,7 +1310,7 @@ jQuery.extend({
 		return deferred;
 	},
 
-	// Deferred helper
+	// Deferred util
 	when: function( firstParam ) {
 		var args = sliceDeferred.call( arguments, 0 ),
 			i = 0,
